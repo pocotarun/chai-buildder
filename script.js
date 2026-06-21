@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentOrderPrice = 0; // Current price track karne ke liye global variable
 
     // --- DYNAMIC ELEMENT INJECTION ---
-
+    
     // Left Panel me Title ke niche live price tag inject karna
     const panelPriceTag = document.createElement('div');
     panelPriceTag.id = 'panel-price';
@@ -60,13 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
         transition: all 0.2s ease;
         letter-spacing: 0.5px;
     `;
-
+    
     // Hover and Press Effects for Button
     orderBtn.addEventListener('mouseenter', () => orderBtn.style.transform = 'translateY(-2px)');
     orderBtn.addEventListener('mouseleave', () => orderBtn.style.transform = 'translateY(0)');
     orderBtn.addEventListener('mousedown', () => orderBtn.style.transform = 'scale(0.97)');
     orderBtn.addEventListener('mouseup', () => orderBtn.style.transform = 'scale(1)');
-
+    
     // Left panel ke andar sabse niche button append karna
     menuPanel.appendChild(orderBtn);
 
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedType = document.querySelector('input[name="tea-type"]:checked')?.value || 'cold-tea';
         const selectedSize = document.querySelector('input[name="tea-size"]:checked')?.value || 'medium';
         const selectedMilk = document.querySelector('input[name="tea-milk"]:checked')?.value || 'regular-milk';
-
+        
         const checkedExtras = [];
         document.querySelectorAll('input[name="tea-extras"]:checked').forEach(cb => {
             checkedExtras.push(cb.value);
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const typeText = document.querySelector('input[name="tea-type"]:checked').nextSibling.textContent.trim();
         const sizeText = document.querySelector('input[name="tea-size"]:checked').nextSibling.textContent.trim();
         const milkText = document.querySelector('input[name="tea-milk"]:checked').nextSibling.textContent.trim();
-
+        
         let extrasList = [];
         document.querySelectorAll('input[name="tea-extras"]:checked').forEach(cb => {
             extrasList.push(cb.nextSibling.textContent.trim());

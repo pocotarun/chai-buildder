@@ -1,0 +1,54 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box; /* Isse padding box ke andar hi rehti h, size kharab nahi hota */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(15, 15, 15); /* Dark background jaise video me h */
+    color: aliceblue;
+}
+
+nav {
+    color: rgb(218, 132, 3);
+    font-weight: 700;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#br1 {
+    height: 3px;
+    background-color: rgb(218, 132, 3);
+    border: none;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* --- LAYOUT CONFIGURATION (MAIN FIX) --- */
+
+.app {
+    display: flex;         /* Dono boxes ko side-by-side lane ke liye */
+    gap: 2.5rem;          /* Boxes ke beech ka gap (jaise SS me h) */
+    max-width: 1200px;    /* Content screen ke hisab se setup rahega */
+    margin: 40px auto;    /* Center alignment for main area */
+    padding: 0 20px;
+}
+
+/* Left Side Menu Box Styling */
+#chaiChanger {
+    background-color: #242424; /* Dark gray box background */
+    border-radius: 16px;       /* Rounded corners jaise SS me h */
+    width: 300px;              /* Fixed width menu ke liye */
+    min-height: 400px;         /* Ek standard height layout check karne ke liye */
+    padding: 20px;             /* Box ke andar ka space */
+}
+
+/* Right Side Cup Box Styling */
+#chaiCup {
+    flex: 1;                   /* Bacha hua saara space ye box le lega */
+    background-color: #1a1a1a; 
+    border-radius: 16px;
+    min-height: 400px;
+    padding: 20px;
+}

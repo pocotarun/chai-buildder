@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Builder</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Chai Order According to Your Taste!</h1>
+        </nav>
+        <hr id="br1">
+    </header>
+
+    <!-- Main container ko class di h taaki flexbox laga sakein -->
+    <main class="app">
+
+        <!-- Left Side: Menu/Control Panel Box -->
+        <div id="chaiChanger" class="panel">
+            <h2 style="text-align: center;">Chai Menu</h2>
+            <!-- Aapka menu content yahan aayega -->
+
+
+            <!--  <div class="chaiMenu">
+                <div class="chaiMenuDrink">
+                    <h1>DRINK</h1>                 
+                </div> -->
+            <div class="form-group">
+                <h3>Tea Type</h3>
+                <input type="radio" class="input" name="tea-type" value="black-tea"> Black Tea <br>
+                <input type="radio" class="input" name="tea-type" value="no-sugar"> Tea without Sugar <br>
+                <input type="radio" class="input" name="tea-type" value="cold-tea" checked> Cold Tea
+            </div>
+
+            <div class="form-group">
+                <h3>Select Size</h3>
+                <input type="radio" class="input" name="tea-size" value="small"> Small <br>
+                <input type="radio" class="input" name="tea-size" value="medium" checked> Medium <br>
+                <input type="radio" class="input" name="tea-size" value="large"> Large
+            </div>
+
+            <div class="form-group">
+                <h3>Milk Options</h3>
+                <input type="radio" class="input" name="tea-milk" value="no-milk"> No Milk (Black) <br>
+                <input type="radio" class="input" name="tea-milk" value="regular-milk" checked> Regular Milk <br>
+                <input type="radio" class="input" name="tea-milk" value="almond-milk"> Almond Milk
+            </div>
+
+            <div class="form-group">
+                <h3>Add Extras</h3>
+                <input type="checkbox" class="input" name="tea-extras" value="ginger"> Ginger (Adrak) <br>
+                <input type="checkbox" class="input" name="tea-extras" value="cardamom"> Cardamom (Elaichi) <br>
+                <input type="checkbox" class="input" name="tea-extras" value="extra-sugar"> Extra Sugar
+            </div>
+
+        </div>
+
+        </div>
+
+        <!-- Right Side: Chai Cup Visual (Jaise SS me h) -->
+        <div id="chaiCup" class="visual">
+            <!-- Chai cup ka graphic/content yahan aayega -->
+        </div>
+
+
+
+
+
+
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cupGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3a72f"/>
+      <stop offset="100%" stop-color="#d17c0f"/>
+    </linearGradient>
+    <linearGradient id="steamGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.1)"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="28" fill="#121212"/>
+  <path d="M52 98c0-26 24-42 56-42s56 16 56 42H52z" fill="url(#cupGradient)"/>
+  <path d="M92 64c0 0 8-18 24-18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.9"/>
+  <path d="M70 64c0 0 8-18 24-18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M110 98h20c0 16-12 28-24 28s-24-12-24-28h28z" fill="#1f1f1f"/>
+  <path d="M70 86h60v10c0 12-10 22-22 22H92c-12 0-22-10-22-22V86z" fill="#171717"/>
+  <path d="M88 80h32v10H88z" fill="#ffd477" opacity="0.8"/>
+  <circle cx="126" cy="108" r="8" fill="#d17c0f" opacity="0.85"/>
+</svg>

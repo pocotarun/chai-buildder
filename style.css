@@ -1,20 +1,21 @@
 * {
     margin: 0%;
     padding: 0%;
-    box-sizing: border-box; /* Isse padding box ke andar hi rehti h, size kharab nahi hota */
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: rgb(15, 15, 15); /* Dark background jaise video me h */
+    background-color: rgb(15, 15, 15);
     color: aliceblue;
+    min-height: 100vh;
 }
 
 nav {
     color: rgb(218, 132, 3);
     font-weight: 700;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 #br1 {
@@ -25,30 +26,60 @@ nav {
     margin: 20px auto;
 }
 
-/* --- LAYOUT CONFIGURATION (MAIN FIX) --- */
-
 .app {
-    display: flex;         /* Dono boxes ko side-by-side lane ke liye */
-    gap: 2.5rem;          /* Boxes ke beech ka gap (jaise SS me h) */
-    max-width: 1200px;    /* Content screen ke hisab se setup rahega */
-    margin: 40px auto;    /* Center alignment for main area */
+    display: flex;
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Left Side Menu Box Styling */
 #chaiChanger {
-    background-color: #242424; /* Dark gray box background */
-    border-radius: 16px;       /* Rounded corners jaise SS me h */
-    width: 300px;              /* Fixed width menu ke liye */
-    min-height: 400px;         /* Ek standard height layout check karne ke liye */
-    padding: 20px;             /* Box ke andar ka space */
+    background-color: #242424;
+    border-radius: 20px;
+    width: 320px;
+    padding: 30px 25px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* Right Side Cup Box Styling */
+#chaiChanger h2 {
+    font-size: 1.5rem;
+    color: rgb(218, 132, 3);
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.form-group {
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    line-height: 2.4;
+}
+
+.form-group h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8c8c8c;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    margin-right: 12px;
+    accent-color: rgb(218, 132, 3);
+    cursor: pointer;
+    transform: scale(1.15);
+    vertical-align: middle;
+}
+
 #chaiCup {
-    flex: 1;                   /* Bacha hua saara space ye box le lega */
-    background-color: #1a1a1a; 
-    border-radius: 16px;
-    min-height: 400px;
-    padding: 20px;
+    flex: 1;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #2d2d2d;
+    min-height: 500px;
 }

@@ -13,6 +13,17 @@
 
 ---
 
+
+### An ultra-interactive, production-grade digital chai customization engine built with premium glassmorphic dark UI.
+
+<br />
+
+[![Launch Application](https://img.shields.io/badge/🚀_LAUNCH_APP-LIVE_DEMO-00baf2?style=for-the-badge&logo=rocket&logoColor=white)](https://pocotarun.github.io/chai-buildder/)
+
+
+<!-- Baki ke chhote badges iske niche aa sakte hain -->
+---
+
 ## Overview
 
 **Chai Builder** is a UI-first, interactive web application that allows users to seamlessly design and customize local Indian tea configurations from scratch. Featuring a real-time responsive design panel and an advanced programmatic transparent glass mug rendering engine, the application elevates simple selection inputs into a fully responsive aesthetic playground.

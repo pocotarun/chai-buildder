@@ -91,61 +91,104 @@ nav {
     align-items: center;
 }
 
-.cup-hero {
+.cup-scene {
     position: relative;
-    width: 160px;
-    height: 190px;
+    width: 240px;
+    height: 280px;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin-bottom: 28px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+}
+
+.steam {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.steam span {
+    width: 10px;
+    height: 70px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    opacity: 0;
+    animation: steam-rise 3s ease-in-out infinite;
+}
+
+.steam span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.steam span:nth-child(3) {
+    animation-delay: 0.8s;
 }
 
 .cup {
-    width: 130px;
-    height: 120px;
-    background: linear-gradient(180deg, #8d5a2c, #4e2b12);
-    border-radius: 0 0 70px 70px;
-    box-shadow: inset 0 10px 0 rgba(255, 255, 255, 0.08);
     position: relative;
+    width: 220px;
+    height: 180px;
+    background: linear-gradient(180deg, #482e1d 0%, #24140a 100%);
+    border-radius: 0 0 110px 110px;
+    box-shadow: inset 0 10px 0 rgba(255, 255, 255, 0.08), 0 20px 40px rgba(0, 0, 0, 0.35);
+    overflow: visible;
 }
 
 .cup::before {
     content: '';
     position: absolute;
-    top: -22px;
+    top: -30px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 45px;
-    border-radius: 60px 60px 0 0;
-    background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.2), transparent 70%);
-}
-
-.steam {
-    width: 18px;
-    height: 110px;
-    position: absolute;
-    top: -90px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.steam::before,
-.steam::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 12px;
+    width: 180px;
     height: 70px;
-    border: 2px solid rgba(255, 255, 255, 0.35);
-    border-radius: 50%;
-    animation: steam 3s ease-in-out infinite;
+    background: radial-gradient(circle at 50% 35%, #5b3d26, #2b170d 80%);
+    border-radius: 50% 50% 45% 45%;
 }
 
-.steam::after {
-    left: 18px;
-    animation-delay: 0.6s;
+.cup-liquid {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 40px;
+    height: 90px;
+    background: linear-gradient(180deg, #f3c27d 0%, #c37f34 35%, #7f491f 100%);
+    border-radius: 50% 50% 30% 30%;
+}
+
+.cup-glow {
+    position: absolute;
+    top: 64px;
+    left: 38px;
+    width: 60px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    filter: blur(1px);
+}
+
+.cup-handle {
+    position: absolute;
+    right: -28px;
+    top: 36px;
+    width: 44px;
+    height: 92px;
+    border: 8px solid rgba(255, 255, 255, 0.18);
+    border-left: none;
+    border-bottom: none;
+    border-radius: 0 52px 52px 0;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.cup-base {
+    width: 180px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    margin-top: 14px;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.03);
 }
 
 .visual-text {
@@ -153,6 +196,21 @@ nav {
     text-align: center;
     max-width: 260px;
     line-height: 1.5;
+}
+
+@keyframes steam-rise {
+    0% {
+        transform: translateY(0) scale(0.9);
+        opacity: 0.2;
+    }
+    50% {
+        transform: translateY(-38px) scale(1.05);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-80px) scale(1.2);
+        opacity: 0;
+    }
 }
 
 .contact {
@@ -252,5 +310,49 @@ nav {
 
     .contact-links {
         flex-direction: column;
+    }
+
+    .cup-scene {
+        width: 180px;
+        height: 230px;
+    }
+
+    .cup {
+        width: 170px;
+        height: 140px;
+    }
+
+    .cup::before {
+        width: 140px;
+        height: 55px;
+        top: -24px;
+    }
+
+    .cup-liquid {
+        top: 32px;
+        height: 70px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .cup-glow {
+        top: 50px;
+        left: 30px;
+        width: 46px;
+        height: 10px;
+    }
+
+    .cup-handle {
+        right: -22px;
+        top: 30px;
+        width: 30px;
+        height: 72px;
+        border-width: 6px;
+        border-radius: 0 40px 40px 0;
+    }
+
+    .cup-base {
+        width: 140px;
+        height: 12px;
     }
 }

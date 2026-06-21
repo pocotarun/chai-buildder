@@ -2,16 +2,18 @@
 
 ![Chai Buildder Logo](./logo.svg)
 
-## Overview
+**Chai Buildder** is a UI-first chai ordering demo built with clean web standards and polished visual styling. The project uses HTML5, CSS3, Vanilla JavaScript, and SVG icon styling to deliver a premium dark-themed experience.
 
-**Chai Buildder** is a polished web UI demo for ordering chai with customizable tea type, size, milk, and extra flavors. The design highlights a premium dark aesthetic and modern controls.
+## What is Chai Buildder?
 
-## Features
+A simple interactive chai menu that lets users choose:
 
-- Clean interface for chai selection
-- Radio and checkbox controls for drink customization
-- Stylized menu panel and visual presentation area
-- Contact section with website-style social icons
+- tea type
+- cup size
+- milk preference
+- extra flavor options
+
+The interface is designed to feel like a modern website demo, with a dedicated preview panel and a contact section styled like real product pages.
 
 ## Technology Stack
 
@@ -20,31 +22,37 @@
 - Vanilla JavaScript
 - SVG icon styling
 
-## Project Structure
+## Project Files
 
-- `index.html` — page markup and contact section
-- `style.css` — layout, visuals, and icon styling
-- `sctript.js` — placeholder for future interactive behavior
-- `logo.svg` — project logo asset
+| File | Purpose |
+| --- | --- |
+| `index.html` | Main page markup, selection controls, and contact section |
+| `style.css` | Dark theme layout, responsive styling, and icon cards |
+| `sctript.js` | Placeholder script file for future behavior |
+| `logo.svg` | Brand asset used in the README and site |
 
-## Usage
+## Features
+
+- Dark glassmorphism-inspired layout
+- Responsive chai customization panel
+- Styled contact cards with Instagram, email, and GitHub links
+- Clean section structure for project clarity
+
+## How to Use
 
 1. Open `index.html` in your browser.
-2. Choose your tea type, size, milk option, and extras.
-3. Use the contact links at the bottom to connect by Instagram, email, or GitHub.
+2. Select your preferred tea type, size, milk option, and extras.
+3. Use the contact section to connect with Instagram, email, or GitHub.
 
-## Development
+## Future Enhancements
 
-Future improvements may include:
-
-- live order summaries
-- price calculation and totals
-- cup animation and mobile layout refinements
+- live selection summaries
+- price calculation and order totals
+- animated cup or chai steam effects
+- improved mobile responsiveness
 
 ## Contact
 
-Reach out via:
-
 - Instagram: [@Hidden.Tarun](https://www.instagram.com/Hidden.Tarun)
-- Email: engr.tarundilwal@gmail.com
+- Email: [engr.tarundilwal@gmail.com](mailto:engr.tarundilwal@gmail.com)
 - GitHub: [pocotarun](https://github.com/pocotarun)

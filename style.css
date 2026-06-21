@@ -1,3 +1,4 @@
+/* --- BASE RESET & THEME --- */
 * {
     margin: 0%;
     padding: 0%;
@@ -26,6 +27,7 @@ nav {
     margin: 20px auto;
 }
 
+/* --- MAIN INTERFACE LAYOUT --- */
 .app {
     display: flex;
     gap: 2.5rem;
@@ -34,6 +36,7 @@ nav {
     padding: 0 20px;
 }
 
+/* --- LEFT PANEL: CHAI MENU --- */
 #chaiChanger {
     background-color: #242424;
     border-radius: 20px;
@@ -75,13 +78,14 @@ nav {
     vertical-align: middle;
 }
 
+/* --- RIGHT PANEL: VISUAL PREVIEW AREA --- */
 #chaiCup {
     flex: 1;
     background-color: #1a1a1a;
     border-radius: 20px;
     padding: 30px;
     border: 1px solid #2d2d2d;
-    min-height: 500px;
+    min-height: 520px;
 }
 
 .visual {
@@ -93,126 +97,147 @@ nav {
 
 .cup-scene {
     position: relative;
-    width: 240px;
+    width: 250px;
     height: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
 }
 
+/* --- MODERN TRANSPARENT GLASS MUG --- */
+.cup {
+    position: relative;
+    width: 150px;
+    /* Sleek straight walls look */
+    height: 190px;
+    /* Tall modern glass structure */
+    background: rgba(255, 255, 255, 0.03);
+    /* Glass transparency */
+    border: 3.5px solid rgba(255, 255, 255, 0.15);
+    border-top: 2px solid rgba(255, 255, 255, 0.25);
+    /* Sharp top rim */
+    border-radius: 0 0 28px 28px;
+    /* Rounded bottom corners */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+/* --- CHAI LIQUID (Fills from absolute bottom) --- */
+.cup-liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75%;
+    /* Initial chai fill level */
+    background: linear-gradient(180deg, #e19956 0%, #ba7234 60%, #8b4a18 100%);
+    border-radius: 0 0 24px 24px;
+    transition: height 0.4s ease;
+    /* For smooth JS changes later */
+}
+
+/* Glass Gloss / Reflection Highlight */
+.cup-glow {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 15px;
+    height: 85%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 10px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* --- GLASS MUG HANDLE --- */
+.cup-handle {
+    position: absolute;
+    right: -38px;
+    top: 35px;
+    width: 42px;
+    height: 100px;
+    border: 3.5px solid rgba(255, 255, 255, 0.15);
+    border-left: none;
+    /* Perfectly blends into the body */
+    border-radius: 0 30px 30px 0;
+    background: rgba(255, 255, 255, 0.02);
+    z-index: 1;
+}
+
+/* Floor Shadow Below The Glass */
+.cup-base {
+    width: 130px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    filter: blur(5px);
+    border-radius: 50%;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+/* --- VAPOR STEAM EFFECT --- */
 .steam {
     position: absolute;
-    top: 20px;
+    top: 10px;
     display: flex;
-    gap: 12px;
+    gap: 14px;
+    filter: blur(3px);
 }
 
 .steam span {
-    width: 10px;
-    height: 70px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    width: 6px;
+    height: 60px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
     border-radius: 999px;
     opacity: 0;
-    animation: steam-rise 3s ease-in-out infinite;
+    animation: steam-rise 3.5s ease-in-out infinite;
+}
+
+.steam span:nth-child(1) {
+    animation-delay: 0.1s;
 }
 
 .steam span:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.steam span:nth-child(3) {
     animation-delay: 0.8s;
 }
 
-.cup {
-    position: relative;
-    width: 220px;
-    height: 180px;
-    background: linear-gradient(180deg, #482e1d 0%, #24140a 100%);
-    border-radius: 0 0 110px 110px;
-    box-shadow: inset 0 10px 0 rgba(255, 255, 255, 0.08), 0 20px 40px rgba(0, 0, 0, 0.35);
-    overflow: visible;
-}
-
-.cup::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
-    height: 70px;
-    background: radial-gradient(circle at 50% 35%, #5b3d26, #2b170d 80%);
-    border-radius: 50% 50% 45% 45%;
-}
-
-.cup-liquid {
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    top: 40px;
-    height: 90px;
-    background: linear-gradient(180deg, #f3c27d 0%, #c37f34 35%, #7f491f 100%);
-    border-radius: 50% 50% 30% 30%;
-}
-
-.cup-glow {
-    position: absolute;
-    top: 64px;
-    left: 38px;
-    width: 60px;
-    height: 14px;
-    background: rgba(255, 255, 255, 0.18);
-    border-radius: 999px;
-    filter: blur(1px);
-}
-
-.cup-handle {
-    position: absolute;
-    right: -28px;
-    top: 36px;
-    width: 44px;
-    height: 92px;
-    border: 8px solid rgba(255, 255, 255, 0.18);
-    border-left: none;
-    border-bottom: none;
-    border-radius: 0 52px 52px 0;
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.cup-base {
-    width: 180px;
-    height: 16px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    margin-top: 14px;
-    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.03);
-}
-
-.visual-text {
-    color: #d4d4d4;
-    text-align: center;
-    max-width: 260px;
-    line-height: 1.5;
+.steam span:nth-child(3) {
+    animation-delay: 1.5s;
 }
 
 @keyframes steam-rise {
     0% {
-        transform: translateY(0) scale(0.9);
-        opacity: 0.2;
+        transform: translateY(0) scaleX(0.9);
+        opacity: 0;
     }
-    50% {
-        transform: translateY(-38px) scale(1.05);
+
+    20% {
         opacity: 0.4;
     }
+
+    60% {
+        transform: translateY(-40px) scaleX(1.1);
+        opacity: 0.2;
+    }
+
     100% {
-        transform: translateY(-80px) scale(1.2);
+        transform: translateY(-80px) scaleX(1.3);
         opacity: 0;
     }
 }
 
+.visual-text {
+    color: #8c8c8c;
+    text-align: center;
+    max-width: 260px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+}
+
+/* --- CONTACT SECTION --- */
 .contact {
     max-width: 1100px;
     margin: 24px auto 40px;
@@ -276,21 +301,7 @@ nav {
     height: 22px;
 }
 
-@keyframes steam {
-    0% {
-        transform: translateX(0) translateY(0) scale(0.9);
-        opacity: 0.6;
-    }
-    50% {
-        transform: translateX(0) translateY(-24px) scale(1.05);
-        opacity: 0.35;
-    }
-    100% {
-        transform: translateX(0) translateY(-50px) scale(1.15);
-        opacity: 0;
-    }
-}
-
+/* --- RESPONSIVE MEDIA QUERIES --- */
 @media (max-width: 920px) {
     .app {
         flex-direction: column;
@@ -313,46 +324,7 @@ nav {
     }
 
     .cup-scene {
-        width: 180px;
-        height: 230px;
-    }
-
-    .cup {
-        width: 170px;
-        height: 140px;
-    }
-
-    .cup::before {
-        width: 140px;
-        height: 55px;
-        top: -24px;
-    }
-
-    .cup-liquid {
-        top: 32px;
-        height: 70px;
-        left: 12px;
-        right: 12px;
-    }
-
-    .cup-glow {
-        top: 50px;
-        left: 30px;
-        width: 46px;
-        height: 10px;
-    }
-
-    .cup-handle {
-        right: -22px;
-        top: 30px;
-        width: 30px;
-        height: 72px;
-        border-width: 6px;
-        border-radius: 0 40px 40px 0;
-    }
-
-    .cup-base {
-        width: 140px;
-        height: 12px;
+        transform: scale(0.85);
+        margin-bottom: 0;
     }
 }

@@ -1,79 +1,73 @@
-
-// Pure logic for dynamic Chai Builder UI
+// Dynamic interaction logic for Chai Builder
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. DOM Elements select karte hain
+    // DOM nodes extract karte hain
     const cup = document.querySelector('.cup');
     const cupLiquid = document.querySelector('.cup-liquid');
     const visualText = document.querySelector('.visual-text');
-    const steam = document.querySelector('.steam');
-
-    // Saare input groups ko trace karne ke liye
+    
     const allInputs = document.querySelectorAll('.input');
-    const teaExtrasInputs = document.querySelectorAll('input[name="tea-extras"]');
+    const extrasCheckboxes = document.querySelectorAll('input[name="tea-extras"]');
 
-    // 2. PREVIEW UPDATE FUNCTION
+    // DYNAMIC INTERACTION FUNCTION
     function updateChaiPreview() {
-        // Selected radio values nikalte hain
+        // Active selections read karte hain
         const selectedType = document.querySelector('input[name="tea-type"]:checked')?.value;
         const selectedSize = document.querySelector('input[name="tea-size"]:checked')?.value;
         const selectedMilk = document.querySelector('input[name="tea-milk"]:checked')?.value;
-
-        // Selected checkboxes (Extras) ki list banate hain
-        const selectedExtras = [];
-        teaExtrasInputs.forEach(input => {
-            if (input.checked) {
-                // Input ke aage ka text content extract karte hain (Ginger, Elaichi etc.)
-                const labelText = input.nextSibling.textContent.trim();
-                selectedExtras.push(labelText);
-            }
-        });
-
-        // --- FEATURE 1: DYNAMIC COLOR CHANGING (Type & Milk) ---
+        
+        // --- 1. DYNAMIC COLOR GRADIENTS (Tea Type & Milk based) ---
         if (selectedType === 'black-tea' || selectedMilk === 'no-milk') {
-            // Dark Transparent Black/Lal Chai look
+            // Lal/Kaali Chai look (Deep Dark Translucent Reddish-Brown)
             cupLiquid.style.background = 'linear-gradient(180deg, #5c2c16 0%, #3d1a0b 60%, #1f0b03 100%)';
-            steam.style.filter = 'blur(3px) hue-rotate(0deg)';
         } else if (selectedMilk === 'almond-milk') {
-            // Lighter/Creamy Almond Milk Chai Look
+            // Creamy Soft Almond Milk Chai Hue
             cupLiquid.style.background = 'linear-gradient(180deg, #f4dbb9 0%, #dcae7b 60%, #a4774b 100%)';
         } else if (selectedType === 'cold-tea') {
-            // Cold Tea look (Thoda dark frosted shade)
+            // Frosted Iced Amber Shade
             cupLiquid.style.background = 'linear-gradient(180deg, #d38944 0%, #aa6122 60%, #75390e 100%)';
         } else {
-            // Regular Milk Tea (Standard Rich Desi Cutting Chai)
+            // Standard Premium Cutting Milk Chai Color
             cupLiquid.style.background = 'linear-gradient(180deg, #e19956 0%, #ba7234 60%, #8b4a18 100%)';
         }
 
-        // --- FEATURE 2: DYNAMIC SIZE SCALING (Size) ---
+        // --- 2. DYNAMIC MUG SCALING (Size based) ---
         if (selectedSize === 'small') {
-            cup.style.transform = 'scale(0.85)'; // Cup 15% chhota ho jayega
+            cup.style.transform = 'scale(0.85)'; // 15% compact size
         } else if (selectedSize === 'large') {
-            cup.style.transform = 'scale(1.15)'; // Cup 15% bada ho jayega
+            cup.style.transform = 'scale(1.15)'; // 15% upscale size
         } else {
-            cup.style.transform = 'scale(1)';    // Medium (Default Size)
+            cup.style.transform = 'scale(1)';    // Standard Medium
         }
 
-        // --- FEATURE 3: LIVE ORDER SUMMARY TEXT ---
-        // UI text labels read karte hain readable output ke liye
+        // --- 3. LIVE SUMMARY GENERATOR ---
+        // Human-readable labels read karne ke liye sibling elements use karte hain
         const typeLabel = document.querySelector('input[name="tea-type"]:checked').nextSibling.textContent.trim();
         const sizeLabel = document.querySelector('input[name="tea-size"]:checked').nextSibling.textContent.trim();
         const milkLabel = document.querySelector('input[name="tea-milk"]:checked').nextSibling.textContent.trim();
 
-        let summary = `Preparing: ${sizeLabel} ${typeLabel} (${milkLabel})`;
+        // Selected extras collect karte hain
+        let selectedExtras = [];
+        extrasCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                selectedExtras.push(checkbox.nextSibling.textContent.trim());
+            }
+        });
 
+        // Final text construct karte hain
+        let summaryText = `Preparing: ${sizeLabel} ${typeLabel} (${milkLabel})`;
         if (selectedExtras.length > 0) {
-            summary += ` + Extra ${selectedExtras.join(' & ')}`;
+            summaryText += ` + Extra ${selectedExtras.join(' & ')}`;
         }
 
-        visualText.textContent = summary;
+        // Update UI description text
+        visualText.textContent = summaryText;
     }
 
-    // 3. EVENT LISTENERS
-    // Jab bhi koi input badlega (change event), preview update hoga
+    // Input elements par global change tracker attach karte hain
     allInputs.forEach(input => {
         input.addEventListener('change', updateChaiPreview);
     });
 
-    // Initial load par call karte hain taaki default settings set ho jayein
+    // Run on initial startup
     updateChaiPreview();
 });
